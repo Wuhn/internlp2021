@@ -55,9 +55,16 @@ function addTime(defaultTime, difference){
 }
   
 function updateTime(timeDiff){
-	updateTable1(timeDiff);
-	updateTable2(timeDiff);
-	updateTable3(timeDiff);
+  let utc0 = document.getElementById("session").querySelectorAll("span");
+  let utcx = document.getElementById("session").querySelectorAll("p");
+
+for (let i = 0; i < utc0.length; i++) {
+	let defaulttime = utc0[i];
+	let targettime = utcx[i];
+	
+	var resultsText = addTime(defaulttime.innerHTML, timeDiff);
+	targettime.innerHTML = resultsText;
+  };
 }
 
 function updateTable1(timeDiff){
@@ -104,7 +111,7 @@ for (let i = 0; i < utc0.length; i++) {
 
 </script>
 
-<table cellspacing="2" cellpadding="4" style="font-family:Verdana" id="session">
+<table cellspacing="2" cellpadding="4" style="font-family:Verdana" id="session1">
   <tr>
 	<th>Timezones</th>
 	<td>
@@ -141,9 +148,9 @@ for (let i = 0; i < utc0.length; i++) {
   </tr>
 </table>
 
-<table cellspacing="2" cellpadding="4" style="font-family:Verdana" id="session1">
+<table cellspacing="2" cellpadding="4" style="font-family:Verdana" id="session">
   <tr>
-    <th>Session 1</th>
+    <th style="min-width:100px">Session 1</th>
   </tr>
   <tr>
     <td class="first"><p id="session1-1">12:00</p><span id="session1-1" hidden>12:00</span></td>
@@ -151,7 +158,7 @@ for (let i = 0; i < utc0.length; i++) {
   </tr>
   <tr>
     <td class="second"><p id="session1-2">12:05</p><span id="session1-2" hidden>12:05</span></td>
-    <td class="second">Invited Talk: Dan Goldwasser</td>
+    <td class="second">Dan Goldwasser</td>
   </tr>
   <tr>
     <td class="first"><p id="session1-3">12:50</p><span id="session1-3" hidden>12:50</span></td>
@@ -162,10 +169,9 @@ for (let i = 0; i < utc0.length; i++) {
     <td class="first">Poster session</td>
   </tr>
   <tr>
-    <td class="second"><p id="session1-5">14:30</p><span id="session1-5" hidden>14:30</span></td>
-    <td class="second">Invited talk: Dorsa Sadigh</td>
+    <td class="second" valign="top"><p id="session1-5">14:30</p><span id="session1-5" hidden>14:30</span></td>
     <td class="second"><details>
-		<summary>Beyond Imitation Learning: New  Paradigms of Querying and Integrating Different Types of Human Data for Improved Robot Learning</summary>
+		<summary>Dorsa Sadigh: Beyond Imitation Learning: New  Paradigms of Querying and Integrating Different Types of Human Data for Improved Robot Learning</summary>
 	  Learning from humans is a fundamental component of building better robotic algorithms that can achieve complex tasks. This plays a central role in specifying how dynamical systems should act, i.e., how an assistive robot arm should move, or how an autonomous car should drive. Learning such models is highly dependent on access to a large amount of expert data collected from humans interacting with robots. However, we usually do not have access to such a large dataset in robotics settings, and even the data provided can be noisy, inaccurate, repetitive, or not informative. In this talk, we will discuss two core ideas to effectively learn from interactions with humans. First, we discuss how to develop active learning techniques that query humans in a directed manner in order to learn from them. Second, we discuss how we can tap into many different sources of data beyond expert demonstrations to learn in an interactive fashion from humans. We discuss some of our recent work on learning from physical corrections, preferences, and suboptimal human data. We end the talk by discussing a new thread of work on integrating language in the robot learning loop to enable language-enabled shared autonomy systems for assistive teleoperation.
     </details>
 	</td>
@@ -174,20 +180,17 @@ for (let i = 0; i < utc0.length; i++) {
     <td class="first"><p id="session1-6">15:15</p><span id="session1-6" hidden>15:15</span></td>
     <td class="first">End</td>
   </tr>
-</table>
-<table cellspacing="2" cellpadding="4" style="font-family:Verdana" id="session2">
   <tr>
-    <th>Session 2</th>
+    <th style="min-width:100px">Session 2</th>
   </tr>
   <tr>
     <td class="first"><p id="session2-1">16:00</p><span id="session2-1" hidden>16:00</span></td>
     <td class="first">Opening Remarks</td>
   </tr>
   <tr>
-    <td class="second"><p id="session2-2">16:05</p><span id="session2-2" hidden>16:05</span></td>
-    <td class="second">Invited talk: Yoav Artzi</td>
+    <td class="second" valign="top"><p id="session2-2">16:05</p><span id="session2-2" hidden>16:05</span></td>
     <td class="second"><details>
-		<summary>Continual Language Learning through Collaborative Interaction with Users</summary>
+		<summary>Yoav Artzi: Continual Language Learning through Collaborative Interaction with Users</summary>
 		Interaction with human users provides ample opportunities for language learning. I will describe how collaborative scenarios provide a strong foundation for learning from interaction with users, by combining strong incentives for teaching and flexibility for adaptation. I will show how this applies to instruction generation learning, where a system learns by comparing human execution of generated instructions and their original system intents to infer the system's communicative success. We use this signal to formulate a contextual bandit learning problem, where the system continually improves over time through interaction with users. In interaction with real users, we demonstrate dramatic improvements in the system's ability to generate language over time.
     </details>
 	</td>  </tr>
@@ -215,10 +218,8 @@ for (let i = 0; i < utc0.length; i++) {
     <td class="first"><p id="session2-8">19:45</p><span id="session2-8" hidden>19:45</span></td>
     <td class="first">End</td>
   </tr>
-</table>
-<table cellspacing="2" cellpadding="4" style="font-family:Verdana" id="session3">
   <tr>
-    <th>Session 3</th>
+    <th style="min-width:100px">Session 3</th>
   </tr>
   <tr>
     <td class="first"><p id="session3-1">23:00</p><span id="session3-1" hidden>23:00</span></td>
@@ -226,10 +227,9 @@ for (let i = 0; i < utc0.length; i++) {
   </tr>
   <tr>
     <td class="second"><p id="session3-2">23:05</p><span id="session3-2" hidden>23:05</span></td>
-    <td class="second">Invited talk: Dan Roth</td>
     <td class="second">
 		<details>
-			<summary>Reasoning Interactively about Text</summary>
+			<summary>Dan Roth: Reasoning Interactively about Text</summary>
 		</details>
 	</td>  </tr>
   <tr>
@@ -238,7 +238,7 @@ for (let i = 0; i < utc0.length; i++) {
   </tr>
   <tr>
     <td class="first"><p id="session3-4">00:00</p><span id="session3-4" hidden>24:00</span></td>
-    <td class="first">Invited talk: Percy Liang</td>
+    <td class="first">Percy Liang</td>
   </tr>
   <tr>
     <td class="second"><p id="session3-5">00:45</p><span id="session3-5" hidden>24:45</span></td>
